@@ -11,3 +11,14 @@ class UserModel_Signup(BaseModel):
     password: str
     blood_type: str
     location: str
+    phoneNumber: str
+
+class UserModel_Getone(BaseModel):
+    token: str
+
+class UserModel_Updateone(BaseModel):
+    email: str
+    name: str
+    blood_type: str
+    location: str
+    phoneNumber: str

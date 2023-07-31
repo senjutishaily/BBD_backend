@@ -34,13 +34,16 @@ from routes.index import router
 from routes.auth import auth
 from routes.login import login
 from routes.signup import signup
-
+from routes.getUser import getUser
+from routes.updateUser import updateUser
 
 # route initialization
 app.include_router(router)
 app.include_router(login)
 app.include_router(signup)
 app.include_router(auth)
+app.include_router(getUser)
+app.include_router(updateUser)
 
 # db test
 __test__();

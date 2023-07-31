@@ -12,8 +12,11 @@ def Signup(data):
         'last_donation': ''
     }
 
-        resultant = cursor.execute("INSERT INTO users (email, password, name, blood_type, location, last_donation, phoneNumber) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                            (dataset['email'], dataset['password'], dataset['name'], dataset['blood_type'], dataset['location'], dataset['last_donation'], dataset['phoneNumber']))
+        resultant = cursor.execute("""
+            UPDATE users
+            SET password = %s, name = %s, blood_type = %s, location = %s, last_donation = %s, phoneNumber = %s
+            WHERE email = %s
+        """, (dataset['password'], dataset['name'], dataset['blood_type'], dataset['location'], dataset['last_donation'], dataset['phoneNumber'], dataset['email']))
 
         print(dataset, resultant)
 
