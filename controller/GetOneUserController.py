@@ -9,7 +9,7 @@ config   = dotenv_values(".env")
 def GetOneUser(data):
     try:
         # decoding the token and getting the email
-        token = jsonwebtoken.decode(data.token, config["SECRET"], algorithms=["HS256"])
+        token = jsonwebtoken.decode(data.token, "long_string", algorithms=["HS256"])
         print(token)
         # Pass the parameter as a tuple with a trailing comma
         # Use parameterized query to prevent SQL injection
