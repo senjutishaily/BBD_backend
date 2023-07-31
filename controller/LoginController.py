@@ -17,7 +17,7 @@ def LoginController(data):
                 "token":token
             }
         else:
-            token = jsonwebtoken.encode( { 'email': data.email, 'name': result[0] }, config["SECRET"], algorithm="HS256")
+            token = jsonwebtoken.encode( { 'email': data.email, 'name': result[0] }, "long_string", algorithm="HS256")
             return {
                 "token":token,
                 "result":"success"
